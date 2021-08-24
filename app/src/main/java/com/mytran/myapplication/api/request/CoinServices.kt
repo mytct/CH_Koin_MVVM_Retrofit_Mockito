@@ -6,6 +6,6 @@ import retrofit2.http.Headers
 
 interface CoinServices {
     @Headers("Accept: application/json")
-    @GET("users")
+    @GET("price/all_prices_for_mobile")
     suspend fun listCoins(): List<CoinResponse>
 }
