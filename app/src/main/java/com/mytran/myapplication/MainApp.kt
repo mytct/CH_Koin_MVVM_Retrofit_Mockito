@@ -26,8 +26,8 @@ class MainApp: MultiDexApplication() {
                 //databaseModule,
                 viewModelModule,
                 apiModule,
-                retrofitModule,
-                repositoryModule
+                repositoryModule,
+                retrofitModule
             ))
 
         }
