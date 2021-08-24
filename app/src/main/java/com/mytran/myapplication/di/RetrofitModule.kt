@@ -6,7 +6,6 @@ import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.ext.koin.androidApplication
 import org.koin.core.scope.Scope
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -17,7 +16,6 @@ private const val CONNECT_TIMEOUT = 15L
 private const val WRITE_TIMEOUT = 15L
 private const val READ_TIMEOUT = 15L
 val retrofitModule = module {
-    single { Cache(androidApplication().cacheDir, 10L * 1024 * 1024) }
     single { GsonBuilder().create() }
     single { retrofitHttpClient() }
     single { retrofitBuilder() }
@@ -42,7 +40,7 @@ private fun Scope.retrofitBuilder(): Retrofit {
 
 private fun Scope.retrofitHttpClient(): OkHttpClient {
     return OkHttpClient.Builder().apply {
-        cache(get())
+        //cache(get())
         connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
         writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
         readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
@@ -50,10 +48,10 @@ private fun Scope.retrofitHttpClient(): OkHttpClient {
         //addInterceptor(get())
         addInterceptor(HttpLoggingInterceptor().apply {
             level = if (BuildConfig.DEBUG) {
-                HttpLoggingInterceptor.Level.HEADERS
+                HttpLoggingInterceptor.Level.BODY
             }
             else {
-                HttpLoggingInterceptor.Level.NONE
+                HttpLoggingInterceptor.Level.BODY
             }
         })
     }.build()

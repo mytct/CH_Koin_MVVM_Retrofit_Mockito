@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "BASE_URL", "\"https://www.coinhako.com/api/v3\""
+        buildConfigField "String", "BASE_URL", "\"https://www.coinhako.com/api/v3/\""
         multiDexEnabled true
     }
 
@@ -79,9 +79,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
 
-    // kotlin based dependency injection koin
+    // Koin for Android
+    // Koin core features
     implementation "io.insert-koin:koin-android:$koin_version"
-    // Testing
-    testImplementation "io.insert-koin:koin-test:$koin_version"
+
     implementation 'com.android.support:multidex:1.0.3'
 }
