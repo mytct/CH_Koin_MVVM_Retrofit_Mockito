@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imAvatar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintEnd_toStartOf="@id/tvPriceBuy"
+        app:layout_constraintStart_toEndOf="@id/imAvatar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/_13sdp"
+        android:id="@+id/tvTitle"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="@string/long_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintEnd_toStartOf="@id/tvPriceSell"
+        app:layout_constraintStart_toEndOf="@id/imAvatar"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@id/imAvatar"
+        android:textSize="@dimen/_10sdp"
+        android:id="@+id/tvDesc"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="@string/long_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/_12sdp"
+        android:id="@+id/tvPriceBuy"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/price_buy"
+        tools:text="+string/long_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPriceBuy"
+        android:textSize="@dimen/_12sdp"
+        android:id="@+id/tvPriceSell"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@id/imAvatar"
+        android:textColor="@color/price_sell"
+        tools:text="-string/long_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ buildscript {
     ext.kotlin_version = "1.5.10"
     ext.koin_version = "3.1.2"
     ext.retrofit_version = '2.6.1'
+    ext.glide_version = '4.11.0'
     repositories {
         google()
         mavenCentral()

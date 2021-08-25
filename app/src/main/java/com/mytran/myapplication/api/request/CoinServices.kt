@@ -8,5 +8,5 @@ import retrofit2.http.Query
 interface CoinServices {
     @Headers("Accept: application/json")
     @GET("price/all_prices_for_mobile")
-    suspend fun listCoins(@Query("counter_currency") currency: String = "USD"): List<CoinResponse>
+    suspend fun listCoins(@Query("counter_currency") currency: String = "USD"): CoinResponse
 }

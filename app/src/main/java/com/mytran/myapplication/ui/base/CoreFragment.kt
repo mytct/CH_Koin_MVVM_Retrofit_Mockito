@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 abstract class CoreFragment: Fragment() {
     abstract fun getLayoutId(): Int
     abstract fun initObserver()
+    abstract fun defaultData()
+    abstract fun doingActionClick(data: Any?, action: String)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -18,6 +20,7 @@ abstract class CoreFragment: Fragment() {
 
     override fun onResume() {
         super.onResume()
+        defaultData()
         initObserver()
     }
 }

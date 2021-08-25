@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="default_txt">#4DD8F4</color>
+    <color name="default_edt">#e3eced</color>
+    <color name="gradient_coin_start">#4DD8F4</color>
+    <color name="gradient_coin_end">#0892ea</color>
+    <color name="price_buy">#ff3235</color>
+    <color name="price_sell">#3d9262</color>
 </resources>
