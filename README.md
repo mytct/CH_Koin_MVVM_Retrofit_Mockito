@@ -1,4 +1,4 @@
-# Android + MVVM + Coroutines Flow + Koin(3.1.2) + Testing ❤️
+# Android + MVVM + Coroutines + Retrofit + Koin(3.1.2) + Testing ❤️
 
 #### Dependencies
 -Material version: '1.4.0'
