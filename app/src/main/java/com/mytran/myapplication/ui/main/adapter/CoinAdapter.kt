@@ -10,11 +10,15 @@ import com.mytran.myapplication.ui.main.data.ItemCoinData
 import com.mytran.myapplication.ui.main.data.TypeCoinGeneric
 
 class CoinAdapter(
-    private val data: MutableList<ItemCoinData>,
     private val listener: OnClickWithCallback
 ) : CoreAdapter(
 
 ) {
+    private val data: MutableList<ItemCoinData> = mutableListOf()
+    fun refreshData(list: MutableList<ItemCoinData>) {
+        data.clear()
+        data.addAll(list)
+    }
     override fun getItemId(position: Int): Long = data[position].hashCode().toLong()
     override fun getItemCount(): Int = data.size
     override fun getItemViewType(position: Int): Int = data[position].type

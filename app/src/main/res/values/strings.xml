@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">CH Resource Testing</string>
     <string name="hint_input">Search text</string>
     <string name="no_data">No Data</string>
     <string name="loading_data">Loading...</string>

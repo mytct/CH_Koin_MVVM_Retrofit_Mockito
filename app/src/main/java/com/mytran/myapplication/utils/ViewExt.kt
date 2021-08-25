@@ -14,6 +14,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.bumptech.glide.signature.ObjectKey
 import com.mytran.myapplication.R
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 
 fun ImageView.loadImage(url: String, scaleSize: Int, loadingResult: (result: Boolean) -> Unit) =
     Glide.with(context).load(url).apply(RequestOptions()
@@ -36,3 +40,17 @@ fun ImageView.loadImage(url: String, scaleSize: Int, loadingResult: (result: Boo
         }
 
     }).error(R.drawable.image_default_rectangle).into(this)
+
+fun CoroutineScope.launchPeriodicAsync(
+    repeatMillis: Long,
+    action: () -> Unit
+) = this.async {
+    if (repeatMillis > 0) {
+        while (isActive) {
+            action()
+            delay(repeatMillis)
+        }
+    } else {
+        action()
+    }
+}
