@@ -5,6 +5,7 @@ import com.mytran.myapplication.ui.base.CoreAdapter
 import com.mytran.myapplication.ui.base.OnClickWithCallback
 import com.mytran.myapplication.ui.main.VH.ItemCoinDisplayVH
 import com.mytran.myapplication.ui.main.VH.ItemCoinEmptyVH
+import com.mytran.myapplication.ui.main.VH.ItemCoinLoadingVH
 import com.mytran.myapplication.ui.main.data.ItemCoinData
 import com.mytran.myapplication.ui.main.data.TypeCoinGeneric
 
@@ -31,6 +32,7 @@ class CoinAdapter(
         val view = createViewFromDynamicLayoutId(viewType, parent)
         return when (viewType) {
             TypeCoinGeneric.ITEM_COIN_DISPLAY -> ItemCoinDisplayVH(view)
+            TypeCoinGeneric.ITEM_LOADING -> ItemCoinLoadingVH(view)
             else -> ItemCoinEmptyVH(view)
         }
     }

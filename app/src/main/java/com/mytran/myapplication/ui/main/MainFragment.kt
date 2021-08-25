@@ -14,7 +14,7 @@ class MainFragment : CoreFragment() {
     companion object {
         fun newInstance() = MainFragment()
     }
-    lateinit var coinAdapter: CoinAdapter
+    private lateinit var coinAdapter: CoinAdapter
     private val homeViewModel: MainViewModel by viewModel()
     override fun getLayoutId(): Int = R.layout.main_fragment
     override fun defaultData() {
@@ -29,16 +29,12 @@ class MainFragment : CoreFragment() {
     }
 
     private fun initAdapter(coinList: MutableList<ItemCoinData>) {
-        if(::coinAdapter.isInitialized) {
-            coinAdapter.notifyDataSetChanged()
-        } else {
-            coinAdapter = CoinAdapter(coinList) { data, action->
-                doingActionClick(data, action)
-            }
-            rvData?.run {
-                adapter = coinAdapter
-                layoutManager = LinearLayoutManager(context)
-            }
+        coinAdapter = CoinAdapter(coinList) { data, action->
+            doingActionClick(data, action)
+        }
+        rvData?.run {
+            adapter = coinAdapter
+            layoutManager = LinearLayoutManager(context)
         }
     }
 
