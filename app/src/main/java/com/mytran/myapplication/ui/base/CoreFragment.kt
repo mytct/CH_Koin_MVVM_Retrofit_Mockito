@@ -10,6 +10,7 @@ abstract class CoreFragment: Fragment() {
     abstract fun getLayoutId(): Int
     abstract fun initObserver()
     abstract fun defaultData()
+    abstract fun refreshLayout()
     abstract fun doingActionClick(data: Any?, action: String)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,5 +23,6 @@ abstract class CoreFragment: Fragment() {
         super.onResume()
         defaultData()
         initObserver()
+        refreshLayout()
     }
 }

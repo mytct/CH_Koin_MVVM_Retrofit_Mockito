@@ -47,7 +47,7 @@
         android:id="@+id/tvPriceBuy"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="@color/price_buy"
+        android:textColor="@color/price_sell"
         tools:text="+string/long_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
@@ -60,7 +60,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         app:layout_constraintBottom_toBottomOf="@id/imAvatar"
-        android:textColor="@color/price_sell"
+        android:textColor="@color/price_buy"
         tools:text="-string/long_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>

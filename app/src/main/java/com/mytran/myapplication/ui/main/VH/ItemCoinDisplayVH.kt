@@ -13,8 +13,8 @@ class ItemCoinDisplayVH(view: View) : CoreAdapter.CoreViewHolder(view) {
             imAvatar?.loadImage(data.icon, avatarSize) {}
             tvTitle?.text = data.name
             tvDesc?.text = data.base
-            tvPriceBuy?.text = data.buy_price
-            tvPriceSell?.text = data.sell_price
+            tvPriceBuy?.text = StringBuilder().append("+").append(data.buy_price).toString()
+            tvPriceSell?.text = StringBuilder().append("-").append(data.sell_price).toString()
         }
     }
 }

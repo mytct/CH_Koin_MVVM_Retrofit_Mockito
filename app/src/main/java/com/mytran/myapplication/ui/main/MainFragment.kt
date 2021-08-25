@@ -1,6 +1,7 @@
 package com.mytran.myapplication.ui.main
 
 import android.util.Log
+import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mytran.myapplication.R
 import com.mytran.myapplication.ui.base.CoreFragment
@@ -26,6 +27,16 @@ class MainFragment : CoreFragment() {
             Log.v("MainFragment", "coinList $coinList")
             initAdapter(coinList)
         })
+    }
+
+    override fun refreshLayout() {
+        edtSearch?.doAfterTextChanged {
+            homeViewModel.filterCoinViaText(it.toString())
+        }
+        btnClear?.setOnClickListener {
+            edtSearch?.setText("")
+            homeViewModel.getCoinList()
+        }
     }
 
     private fun initAdapter(coinList: MutableList<ItemCoinData>) {
