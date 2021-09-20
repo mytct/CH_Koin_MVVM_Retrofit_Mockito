@@ -12,5 +12,14 @@ class TestCodeReview {
         } catch(e: IOException) {
             if (e is NoSuchMethodException || (e as NoSuchMethodException) != null) { }
         }
+        (1..10).forEach {
+            println(it)
+        }
+        (1 until 10).forEach {
+            println(it)
+        }
+        (10 downTo 1).forEach {
+            println(it)
+        }
     }
 }
