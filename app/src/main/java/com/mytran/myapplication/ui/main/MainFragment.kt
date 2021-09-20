@@ -23,14 +23,12 @@ class MainFragment : CoreFragment() {
 
     private lateinit var job: Deferred<Unit>
     private lateinit var coinAdapter: CoinAdapter
+    private lateinit var CoinAdapter: CoinAdapter
 
     private val homeViewModel: MainViewModel by viewModel()
     override fun getLayoutId(): Int = R.layout.main_fragment
     override fun defaultData() {
-                    homeViewModel.getDefaultCoinList()
-
-
-
+        homeViewModel.getDefaultCoinList()
     }
 
     override fun initObserver() {
