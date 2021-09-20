@@ -22,6 +22,9 @@ class TestCodeReview {
             println(it)
         }
     }
+    var myList = mutableListOf(1,2,3)
+    var mySet = mutableSetOf(1,2,3)
+    var myMap = mutableMapOf("answer" to 42)
     fun fooA(a: Any?) {
         val x: String? = a as String? // If 'a' is not String, ClassCastException will be thrown.
     }
