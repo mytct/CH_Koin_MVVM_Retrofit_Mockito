@@ -23,7 +23,6 @@ class MainFragment : CoreFragment() {
 
     private lateinit var job: Deferred<Unit>
     private lateinit var coinAdapter: CoinAdapter
-    private lateinit var ___coinAdapter: CoinAdapter
 
     private val homeViewModel: MainViewModel by viewModel()
     override fun getLayoutId(): Int = R.layout.main_fragment
@@ -45,6 +44,8 @@ class MainFragment : CoreFragment() {
             homeViewModel.getCoinList()
         }
     }
+
+    private fun test() {}
 
     override fun onPause() {
         Log.v("MainFragment", "initIntervalFetch stop")
