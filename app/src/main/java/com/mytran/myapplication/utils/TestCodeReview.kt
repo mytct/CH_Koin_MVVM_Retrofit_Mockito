@@ -22,4 +22,7 @@ class TestCodeReview {
             println(it)
         }
     }
+    fun fooA(a: Any?) {
+        val x: String? = a as String? // If 'a' is not String, ClassCastException will be thrown.
+    }
 }
