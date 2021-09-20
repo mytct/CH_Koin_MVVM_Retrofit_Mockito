@@ -46,9 +46,9 @@ class MainFragment : CoreFragment() {
     }
 
     private fun test() {}
-    private fun testCodeReview() {
-        val numb: String? = null
-        edtSearch.setText(numb)
+    data class C(val a: Any,
+                 val b: Any = 0,
+                 val c: Any) {
     }
 
     override fun onPause() {
