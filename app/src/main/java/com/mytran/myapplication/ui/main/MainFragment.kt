@@ -46,6 +46,10 @@ class MainFragment : CoreFragment() {
     }
 
     private fun test() {}
+    private fun testCodeReview() {
+        val numb: String? = null
+        edtSearch.setText(numb)
+    }
 
     override fun onPause() {
         Log.v("MainFragment", "initIntervalFetch stop")
