@@ -50,6 +50,11 @@ class MainFragment : CoreFragment() {
                  val b: Any = 0,
                  val c: Any) {
     }
+    // this in not a Python and you are not in PEP 8 realm
+    class A {}
+
+
+    class B {}
 
     override fun onPause() {
         Log.v("MainFragment", "initIntervalFetch stop")
